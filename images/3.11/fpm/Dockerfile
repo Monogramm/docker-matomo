@@ -7,6 +7,7 @@ RUN set -ex; \
         git \
         mysql-client \
         unzip \
+        wget \
     ; \
     \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer; \
@@ -26,7 +27,7 @@ RUN set -ex; \
         --no-update --no-interaction \
         --optimize-autoloader --apcu-autoloader \
         require \
-            symfony/yaml~2.6.0 \
+            symfony/yaml:~2.6.0 \
             symfony/process:^3.4 \
     ; \
     composer \
