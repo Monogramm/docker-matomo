@@ -16,9 +16,6 @@ RUN set -ex; \
     wget \
         https://raw.githubusercontent.com/matomo-org/matomo/${MATOMO_VERSION}/composer.lock \
         -O /usr/src/matomo/composer.lock; \
-    cp \
-        /usr/src/matomo/composer.json \
-        /usr/src/matomo/composer.lock; \
     \
     echo "\n" | pecl install apcu; \
     docker-php-ext-enable apcu; \
