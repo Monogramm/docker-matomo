@@ -48,6 +48,12 @@ script:
 notifications:
   email: false
 
+matrix:
+  allow_failures:
+    - env: VERSION=3.12 VARIANT=fpm-alpine
+    - env: VERSION=3.12 VARIANT=fpm
+    - env: VERSION=3.12 VARIANT=apache
+  
 env: # Environments
     - VERSION=3.9 VARIANT=fpm-alpine
     - VERSION=3.9 VARIANT=fpm
