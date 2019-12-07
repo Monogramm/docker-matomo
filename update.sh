@@ -2,21 +2,24 @@
 set -eo pipefail
 
 declare -A compose=(
-	[debian]='debian'
-	[alpine]='alpine'
+	[apache]='apache'
+	[fpm]='fpm'
+	[fpm-alpine]='fpm'
 )
 
 declare -A base=(
-	[debian]='debian'
-	[alpine]='alpine'
+	[apache]='debian'
+	[fpm]='debian'
+	[fpm-alpine]='alpine'
 )
 
 variants=(
-	debian
-	alpine
+	apache
+	fpm
+	fpm-alpine
 )
 
-min_version='1.0'
+min_version='3.0'
 
 
 # version_greater_or_equal A B returns whether A >= B
@@ -24,12 +27,12 @@ function version_greater_or_equal() {
 	[[ "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1" || "$1" == "$2" ]];
 }
 
-dockerRepo="monogramm/docker-__app_slug__"
+dockerRepo="monogramm/docker-matomo"
 # Retrieve automatically the latest versions
-#latests=( $( curl -fsSL 'https://api.github.com/repos/__app_owner_slug__/__app_slug__/tags' |tac|tac| \
-#	grep -oE '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | \
-#	sort -urV ) )
-latests=( 1.0.0 )
+latests=( $( curl -fsSL 'https://api.github.com/repos/matomo-org/matomo/tags' |tac|tac| \
+	grep -oE '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+' | \
+	sort -urV ) )
+#latests=( 1.0.0 )
 
 # Remove existing images
 echo "reset docker images"

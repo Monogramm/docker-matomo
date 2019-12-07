@@ -3,23 +3,23 @@
 [uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
 
 [![License: GPL v3][uri_license_image]][uri_license]
-[![Build Status](https://travis-ci.org/Monogramm/docker-__app_slug__.svg)](https://travis-ci.org/Monogramm/docker-__app_slug__)
-[![Docker Automated buid](https://img.shields.io/docker/cloud/build/monogramm/docker-__app_slug__.svg)](https://hub.docker.com/r/monogramm/docker-__app_slug__/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/monogramm/docker-__app_slug__.svg)](https://hub.docker.com/r/monogramm/docker-__app_slug__/)
-[![Docker Version](https://images.microbadger.com/badges/version/monogramm/docker-__app_slug__.svg)](https://microbadger.com/images/monogramm/docker-__app_slug__)
-[![Docker Size](https://images.microbadger.com/badges/image/monogramm/docker-__app_slug__.svg)](https://microbadger.com/images/monogramm/docker-__app_slug__)
-[![GitHub stars](https://img.shields.io/github/stars/Monogramm/docker-__app_name__?style=social)](https://github.com/Monogramm/docker-__app_name__)
+[![Build Status](https://travis-ci.org/Monogramm/docker-matomo.svg)](https://travis-ci.org/Monogramm/docker-matomo)
+[![Docker Automated buid](https://img.shields.io/docker/cloud/build/monogramm/docker-matomo.svg)](https://hub.docker.com/r/monogramm/docker-matomo/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/monogramm/docker-matomo.svg)](https://hub.docker.com/r/monogramm/docker-matomo/)
+[![Docker Version](https://images.microbadger.com/badges/version/monogramm/docker-matomo.svg)](https://microbadger.com/images/monogramm/docker-matomo)
+[![Docker Size](https://images.microbadger.com/badges/image/monogramm/docker-matomo.svg)](https://microbadger.com/images/monogramm/docker-matomo)
+[![GitHub stars](https://img.shields.io/github/stars/Monogramm/docker-matomo?style=social)](https://github.com/Monogramm/docker-matomo)
 
 <!--
 
 Template variables to replace in ALL files:
-* __app_name__: Name of the application
-* __app_owner_slug__: GitHub Owner of the original application
-* __app_slug__: GitHub slug of the original application
-* __app_uppercase_slug__: Uppercase value of the GitHub slug
-* __app_description__: Application description
-* __app_url__: Application URL
-* __app_vendor_name__: Uppercase value of the GitHub slug
+* Matomo: Name of the application
+* matomo-org: GitHub Owner of the original application
+* matomo: GitHub slug of the original application
+* MATOMO: Uppercase value of the GitHub slug
+* Open-Source analytics platform.: Application description
+* https://matomo.org/: Application URL
+* matomo.org: Uppercase value of the GitHub slug
 
 After replacing all variables:
 * Edit `update.sh` to edit how to retrieve the application latest versions and how to generate images
@@ -28,37 +28,33 @@ After replacing all variables:
 
 -->
 
-# __app_name__ Docker image
+# Matomo Docker image
 
-Docker image for __app_name__.
+Custom Docker image for Matomo.
 
 :construction: **This image is still in development!**
 
-## What is __app_name__ ?
+## What is Matomo ?
 
-__app_description__
+Open-Source analytics platform.
 
-> [__app_name__](__app_url__)
+> [Matomo](https://matomo.org/)
 
 ## Supported tags
 
-https://hub.docker.com/r/monogramm/docker-__app_slug__/
+https://hub.docker.com/r/monogramm/docker-matomo/
 
-* `alpine` `latest`
-* `debian`
+* `apache` `latest`
+* `fpm`
+* `fpm-alpine`
 
 ## How to run this image ?
 
-<!--
-    If based on official images, refer to official doc:
+See Matomo base image documentation for details.
 
-See __app_name__ base image documentation for details.
+> [Matomo GitHub](https://github.com/matomo-org/docker)
 
-> [__app_name__ GitHub](https://github.com/__app_owner_slug__/__app_slug__)
-
-> [__app_name__ DockerHub](https://hub.docker.com/r/__app_owner_slug__/docker-__app_slug__-base/)
-
--->
+> [Matomo DockerHub](https://hub.docker.com/_/matomo)
 
 # Questions / Issues
-If you got any questions or problems using the image, please visit our [Github Repository](https://github.com/Monogramm/docker-__app_slug__) and write an issue.
+If you got any questions or problems using the image, please visit our [Github Repository](https://github.com/Monogramm/docker-matomo) and write an issue.
