@@ -6,9 +6,11 @@ services:
     build:
       context: ./test
       dockerfile: Dockerfile
+    #container_name: sut
     depends_on:
       - matomodb
       - matomo
+      - matomonginx
     volumes_from:
       - matomo
     volumes:
@@ -25,15 +27,15 @@ services:
         - VCS_REF=${VCS_REF}
         - BUILD_DATE=${BUILD_DATE}
     # For production, download prebuilt image
-    #image: ${IMAGE_NAME}
+    image: ${IMAGE_NAME}
     container_name: matomo
     #restart: always
     depends_on:
       - matomodb
     links:
       - matomodb
-    ports:
-      - 80:80
+    #ports:
+    #  - 9000:9000
     volumes:
       - /srv/matomo/html:/var/www/html
       - /etc/localtime:/etc/localtime:ro
@@ -62,3 +64,28 @@ services:
       - MYSQL_DATABASE=matomo
       - MYSQL_USER=matomo
       - MYSQL_PASSWORD=matomodbpass
+
+  matomonginx:
+    image: nginx:latest
+    container_name: matomonginx
+    restart: always
+    ports:
+      - 80:80
+      # If you need SSL connection
+      # - '443:443'
+    depends_on:
+      - matomo
+    links:
+      - matomo
+    volumes:
+      - /srv/matomo/html:/var/www/html
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      # TODO Provide a custom nginx conf
+      #- ./nginx.conf:/etc/nginx/nginx.conf:ro
+      # If you need SSL connection, you can provide your own certificates
+      # - ./certs:/etc/letsencrypt
+      # - ./certs-data:/data/letsencrypt
+    environment:
+      - NGINX_HOST=localhost # set your local domain or your live domain
+      # - NGINX_CGI=matomo:9000 # same as matomo container name

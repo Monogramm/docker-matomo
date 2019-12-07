@@ -6,6 +6,7 @@ services:
     build:
       context: ./test
       dockerfile: Dockerfile
+    #container_name: sut
     depends_on:
       - matomodb
       - matomo
@@ -26,7 +27,7 @@ services:
         - VCS_REF=${VCS_REF}
         - BUILD_DATE=${BUILD_DATE}
     # For production, download prebuilt image
-    #image: ${IMAGE_NAME}
+    image: ${IMAGE_NAME}
     container_name: matomo
     #restart: always
     depends_on:

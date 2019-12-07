@@ -10,27 +10,9 @@
 [![Docker Size](https://images.microbadger.com/badges/image/monogramm/docker-matomo.svg)](https://microbadger.com/images/monogramm/docker-matomo)
 [![GitHub stars](https://img.shields.io/github/stars/Monogramm/docker-matomo?style=social)](https://github.com/Monogramm/docker-matomo)
 
-<!--
-
-Template variables to replace in ALL files:
-* Matomo: Name of the application
-* matomo-org: GitHub Owner of the original application
-* matomo: GitHub slug of the original application
-* MATOMO: Uppercase value of the GitHub slug
-* Open-Source analytics platform.: Application description
-* https://matomo.org/: Application URL
-* matomo.org: Uppercase value of the GitHub slug
-
-After replacing all variables:
-* Edit `update.sh` to edit how to retrieve the application latest versions and how to generate images
-* Edit `template/docker-compose_*.yml` to configure your Docker environment for CI
-* Edit `template/test` content for DockerHub custom tests
-
--->
-
 # Matomo Docker image
 
-Custom Docker image for Matomo.
+Custom Docker image for Matomo with composer and other dependencies for additionnal plugins.
 
 :construction: **This image is still in development!**
 
