@@ -24,11 +24,12 @@ Open-Source analytics platform.
 
 ## Supported tags
 
-https://hub.docker.com/r/monogramm/docker-matomo/
+[Dockerhub monogramm/docker-matomo](https://hub.docker.com/r/monogramm/docker-matomo/)
 
-* `apache` `latest`
-* `fpm`
-* `fpm-alpine`
+* Matomo version [`3.13.0`](https://github.com/matomo-org/matomo/releases/tag/3.13.0)
+    * `3.13-apache` `apache` `latest`
+    * `3.13-fpm` `fpm`
+    * `3.13-fpm-alpine` `fpm-alpine`
 
 ## How to run this image ?
 
