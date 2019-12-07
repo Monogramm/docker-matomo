@@ -63,7 +63,7 @@ for latest in "${latests[@]}"; do
 
 			# Replace the variables.
 			sed -ri -e '
-				s/%%VARIANT%%/-'"$variant"'/g;
+				s/%%VARIANT%%/'"$variant"'/g;
 				s/%%VERSION%%/'"$latest"'/g;
 			' "$dir/Dockerfile"
 

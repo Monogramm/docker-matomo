@@ -1,4 +1,4 @@
-FROM matomo:3.13.0--fpm-alpine
+FROM matomo:3.13.0-fpm-alpine
 
 # Add requirements and install application
 RUN set -ex; \

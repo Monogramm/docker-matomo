@@ -1,4 +1,4 @@
-FROM matomo:3.9.1--apache
+FROM matomo:3.9.1-apache
 
 # Add requirements and install application
 RUN set -ex; \
