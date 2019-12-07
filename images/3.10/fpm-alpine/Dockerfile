@@ -2,7 +2,47 @@ FROM matomo:3.10.0-fpm-alpine
 
 # Add requirements and install application
 RUN set -ex; \
-    echo 'ADD INSTALL OPERATIONS'
+    apk add --no-cache \
+        git \
+        mysql-client \
+    ; \
+    \
+	apk add --no-cache --virtual .build-deps \
+		$PHPIZE_DEPS \
+        unzip \
+    ; \
+    \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer; \
+    wget \
+        https://raw.githubusercontent.com/matomo-org/matomo/${MATOMO_VERSION}/composer.json \
+        -O /usr/src/matomo/composer.json; \
+    wget \
+        https://raw.githubusercontent.com/matomo-org/matomo/${MATOMO_VERSION}/composer.lock \
+        -O /usr/src/matomo/composer.lock; \
+    mv \
+        /usr/src/matomo/composer.json-dist \
+        /usr/src/matomo/composer.json; \
+    \
+    echo "\n" | pecl install apcu; \
+    docker-php-ext-enable apcu; \
+    \
+    composer \
+        --working-dir=/usr/src/matomo/ \
+        --prefer-dist --prefer-stable \
+        --no-update --no-interaction \
+        --optimize-autoloader --apcu-autoloader \
+        require \
+            symfony/yaml~2.6.0 \
+            symfony/process:^3.4 \
+    ; \
+    composer \
+        --working-dir=/usr/src/matomo/ \
+        --prefer-dist --no-dev \
+        --no-interaction \
+        --optimize-autoloader --apcu-autoloader \
+        update; \
+    \
+	apk --purge del .build-deps
 
 # Arguments to label built container
 ARG TAG

@@ -2,7 +2,42 @@ FROM matomo:3.11.0-fpm
 
 # Add requirements and install application
 RUN set -ex; \
-    echo 'ADD INSTALL OPERATIONS'
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        git \
+        mysql-client \
+        unzip \
+    ; \
+    \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer; \
+    wget \
+        https://raw.githubusercontent.com/matomo-org/matomo/${MATOMO_VERSION}/composer.json \
+        -O /usr/src/matomo/composer.json; \
+    wget \
+        https://raw.githubusercontent.com/matomo-org/matomo/${MATOMO_VERSION}/composer.lock \
+        -O /usr/src/matomo/composer.lock; \
+    cp \
+        /usr/src/matomo/composer.json \
+        /usr/src/matomo/composer.lock; \
+    \
+    echo "\n" | pecl install apcu; \
+    docker-php-ext-enable apcu; \
+    \
+    composer \
+        --working-dir=/usr/src/matomo/ \
+        --prefer-dist --prefer-stable \
+        --no-update --no-interaction \
+        --optimize-autoloader --apcu-autoloader \
+        require \
+            symfony/yaml~2.6.0 \
+            symfony/process:^3.4 \
+    ; \
+    composer \
+        --working-dir=/usr/src/matomo/ \
+        --prefer-dist --no-dev \
+        --no-interaction \
+        --optimize-autoloader --apcu-autoloader \
+        update;
 
 # Arguments to label built container
 ARG TAG
