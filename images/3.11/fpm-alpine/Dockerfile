@@ -4,7 +4,7 @@ FROM matomo:3.11.0-fpm-alpine
 RUN set -ex; \
     apk add --no-cache \
         git \
-        mysql-client \
+        mariadb-client \
     ; \
     \
 	apk add --no-cache --virtual .build-deps \

@@ -5,7 +5,7 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         git \
-        mysql-client \
+        mariadb-client \
         unzip \
         wget \
     ; \
