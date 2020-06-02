@@ -22,7 +22,7 @@ Open-Source analytics platform.
 
 [Dockerhub monogramm/docker-matomo](https://hub.docker.com/r/monogramm/docker-matomo/)
 
--   Matomo version [`3.13.6`](https://github.com/matomo-org/matomo/releases/tag/3.13.6)
+-   Matomo version [`3.13.5`](https://github.com/matomo-org/matomo/releases/tag/3.13.5)
     -   `3.13-apache` `apache` `latest`
     -   `3.13-fpm` `fpm`
     -   `3.13-fpm-alpine` `fpm-alpine`

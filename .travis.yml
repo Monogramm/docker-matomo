@@ -55,15 +55,6 @@ matrix:
     - env: VERSION=3.12 VARIANT=apache
   
 env: # Environments
-    - VERSION=3.9 VARIANT=fpm-alpine
-    - VERSION=3.9 VARIANT=fpm
-    - VERSION=3.9 VARIANT=apache
-    - VERSION=3.10 VARIANT=fpm-alpine
-    - VERSION=3.10 VARIANT=fpm
-    - VERSION=3.10 VARIANT=apache
-    - VERSION=3.11 VARIANT=fpm-alpine
-    - VERSION=3.11 VARIANT=fpm
-    - VERSION=3.11 VARIANT=apache
     - VERSION=3.12 VARIANT=fpm-alpine
     - VERSION=3.12 VARIANT=fpm
     - VERSION=3.12 VARIANT=apache
