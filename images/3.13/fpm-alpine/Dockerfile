@@ -1,4 +1,4 @@
-FROM matomo:3.13.0-fpm-alpine
+FROM matomo:3.13.6-fpm-alpine
 
 # Add requirements and install application
 RUN set -ex; \
@@ -46,7 +46,7 @@ RUN set -ex; \
 ARG TAG
 ARG VCS_REF
 ARG BUILD_DATE
-ARG VERSION=3.13.0
+ARG VERSION=3.13.6
 
 # Container labels (http://label-schema.org/)
 # Container annotations (https://github.com/opencontainers/image-spec)

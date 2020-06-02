@@ -1,7 +1,3 @@
-
-[uri_license]: http://www.gnu.org/licenses/agpl.html
-[uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
-
 [![License: GPL v3][uri_license_image]][uri_license]
 [![Build Status](https://travis-ci.org/Monogramm/docker-matomo.svg)](https://travis-ci.org/Monogramm/docker-matomo)
 [![Docker Automated buid](https://img.shields.io/docker/cloud/build/monogramm/docker-matomo.svg)](https://hub.docker.com/r/monogramm/docker-matomo/)
@@ -14,9 +10,9 @@
 
 Custom Docker image for Matomo with composer and other dependencies for additionnal plugins.
 
-:construction: **This image is still in development!**
+:construction: **This image is still in beta!**
 
-## What is Matomo ?
+## What is Matomo
 
 Open-Source analytics platform.
 
@@ -26,12 +22,12 @@ Open-Source analytics platform.
 
 [Dockerhub monogramm/docker-matomo](https://hub.docker.com/r/monogramm/docker-matomo/)
 
-* Matomo version [`3.13.0`](https://github.com/matomo-org/matomo/releases/tag/3.13.0)
-    * `3.13-apache` `apache` `latest`
-    * `3.13-fpm` `fpm`
-    * `3.13-fpm-alpine` `fpm-alpine`
+-   Matomo version [`3.13.6`](https://github.com/matomo-org/matomo/releases/tag/3.13.6)
+    -   `3.13-apache` `apache` `latest`
+    -   `3.13-fpm` `fpm`
+    -   `3.13-fpm-alpine` `fpm-alpine`
 
-## How to run this image ?
+## How to run this image
 
 See Matomo base image documentation for details.
 
@@ -39,5 +35,10 @@ See Matomo base image documentation for details.
 
 > [Matomo DockerHub](https://hub.docker.com/_/matomo)
 
-# Questions / Issues
+## Questions / Issues
+
 If you got any questions or problems using the image, please visit our [Github Repository](https://github.com/Monogramm/docker-matomo) and write an issue.
+
+[uri_license]: http://www.gnu.org/licenses/agpl.html
+
+[uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
